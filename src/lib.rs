@@ -10,7 +10,6 @@ pub async fn sync_start(v: Vec<String>) {
   start(args).await
 }
 
-
 #[napi]
 pub fn rqjs_start(v: Vec<String>) {
   sync_start(v)
