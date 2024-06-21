@@ -88,7 +88,7 @@ function requireNative() {
   } else if (process.platform === 'win32') {
     if (process.arch === 'x64') {
       try {
-        return require('./rqjs.win32-x64-gnu.node')
+        return require('./rqjs.win32-x64-msvc.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -100,7 +100,7 @@ function requireNative() {
 
     } else if (process.arch === 'ia32') {
       try {
-        return require('./rqjs.win32-ia32-gnu.node')
+        return require('./rqjs.win32-ia32-msvc.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -112,7 +112,7 @@ function requireNative() {
 
     } else if (process.arch === 'arm64') {
       try {
-        return require('./rqjs.win32-arm64-gnu.node')
+        return require('./rqjs.win32-arm64-msvc.node')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -127,15 +127,15 @@ function requireNative() {
     }
   } else if (process.platform === 'darwin') {
     try {
-      return require('./rqjs.darwin-universal.node')
-    } catch (e) {
-      loadErrors.push(e)
-    }
-    try {
-      return require('@rqjs-napi/rqjs-darwin-universal')
-    } catch (e) {
-      loadErrors.push(e)
-    }
+        return require('./rqjs.darwin-universal.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
+        return require('@rqjs-napi/rqjs-darwin-universal')
+      } catch (e) {
+        loadErrors.push(e)
+      }
 
     if (process.arch === 'x64') {
       try {
@@ -196,105 +196,105 @@ function requireNative() {
     if (process.arch === 'x64') {
       if (isMusl()) {
         try {
-          return require('./rqjs.linux-x64-musl.node')
-        } catch (e) {
-          loadErrors.push(e)
-        }
-        try {
-          return require('@rqjs-napi/rqjs-linux-x64-musl')
-        } catch (e) {
-          loadErrors.push(e)
-        }
+        return require('./rqjs.linux-x64-musl.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
+        return require('@rqjs-napi/rqjs-linux-x64-musl')
+      } catch (e) {
+        loadErrors.push(e)
+      }
 
       } else {
         try {
-          return require('./rqjs.linux-x64-gnu.node')
-        } catch (e) {
-          loadErrors.push(e)
-        }
-        try {
-          return require('@rqjs-napi/rqjs-linux-x64-gnu')
-        } catch (e) {
-          loadErrors.push(e)
-        }
+        return require('./rqjs.linux-x64-gnu.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
+        return require('@rqjs-napi/rqjs-linux-x64-gnu')
+      } catch (e) {
+        loadErrors.push(e)
+      }
 
       }
     } else if (process.arch === 'arm64') {
       if (isMusl()) {
         try {
-          return require('./rqjs.linux-arm64-musl.node')
-        } catch (e) {
-          loadErrors.push(e)
-        }
-        try {
-          return require('@rqjs-napi/rqjs-linux-arm64-musl')
-        } catch (e) {
-          loadErrors.push(e)
-        }
+        return require('./rqjs.linux-arm64-musl.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
+        return require('@rqjs-napi/rqjs-linux-arm64-musl')
+      } catch (e) {
+        loadErrors.push(e)
+      }
 
       } else {
         try {
-          return require('./rqjs.linux-arm64-gnu.node')
-        } catch (e) {
-          loadErrors.push(e)
-        }
-        try {
-          return require('@rqjs-napi/rqjs-linux-arm64-gnu')
-        } catch (e) {
-          loadErrors.push(e)
-        }
+        return require('./rqjs.linux-arm64-gnu.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
+        return require('@rqjs-napi/rqjs-linux-arm64-gnu')
+      } catch (e) {
+        loadErrors.push(e)
+      }
 
       }
     } else if (process.arch === 'arm') {
       if (isMusl()) {
         try {
-          return require('./rqjs.linux-arm-musleabihf.node')
-        } catch (e) {
-          loadErrors.push(e)
-        }
-        try {
-          return require('@rqjs-napi/rqjs-linux-arm-musleabihf')
-        } catch (e) {
-          loadErrors.push(e)
-        }
+        return require('./rqjs.linux-arm-musleabihf.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
+        return require('@rqjs-napi/rqjs-linux-arm-musleabihf')
+      } catch (e) {
+        loadErrors.push(e)
+      }
 
       } else {
         try {
-          return require('./rqjs.linux-arm-gnueabihf.node')
-        } catch (e) {
-          loadErrors.push(e)
-        }
-        try {
-          return require('@rqjs-napi/rqjs-linux-arm-gnueabihf')
-        } catch (e) {
-          loadErrors.push(e)
-        }
+        return require('./rqjs.linux-arm-gnueabihf.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
+        return require('@rqjs-napi/rqjs-linux-arm-gnueabihf')
+      } catch (e) {
+        loadErrors.push(e)
+      }
 
       }
     } else if (process.arch === 'riscv64') {
       if (isMusl()) {
         try {
-          return require('./rqjs.linux-riscv64-musl.node')
-        } catch (e) {
-          loadErrors.push(e)
-        }
-        try {
-          return require('@rqjs-napi/rqjs-linux-riscv64-musl')
-        } catch (e) {
-          loadErrors.push(e)
-        }
+        return require('./rqjs.linux-riscv64-musl.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
+        return require('@rqjs-napi/rqjs-linux-riscv64-musl')
+      } catch (e) {
+        loadErrors.push(e)
+      }
 
       } else {
         try {
-          return require('./rqjs.linux-riscv64-gnu.node')
-        } catch (e) {
-          loadErrors.push(e)
-        }
-        try {
-          return require('@rqjs-napi/rqjs-linux-riscv64-gnu')
-        } catch (e) {
-          loadErrors.push(e)
-        }
+        return require('./rqjs.linux-riscv64-gnu.node')
+      } catch (e) {
+        loadErrors.push(e)
+      }
+      try {
+        return require('@rqjs-napi/rqjs-linux-riscv64-gnu')
+      } catch (e) {
+        loadErrors.push(e)
+      }
 
       }
     } else if (process.arch === 'ppc64') {
