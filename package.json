@@ -1,6 +1,6 @@
 {
   "name": "@rqjs-napi/rqjs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A cross-platform command line utility to watch file system changes.",
   "main": "index.js",
   "types": "index.d.ts",
